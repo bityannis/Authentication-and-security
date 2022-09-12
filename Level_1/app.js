@@ -6,6 +6,8 @@ const PORT = 4000;
 const mongoDBClient = require("./mongoClient");
 const User = require("./models/user");
 
+console.log(process.env.PASSWORD);
+
 app.use(cors());
 app.use(
   bodyParser.urlencoded({

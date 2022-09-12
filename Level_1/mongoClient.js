@@ -1,7 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
-const username = "usertest";
-const password = "test123_";
-const DB = "marketplace";
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+const DB = process.env.DB;
 
 const URI = `mongodb+srv://${username}:${password}@cluster-clickcollectmer.75bbd7k.mongodb.net/${DB}?retryWrites=true&w=majority`;
 
