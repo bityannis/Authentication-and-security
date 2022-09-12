@@ -1,3 +1,6 @@
-# Level 1 on 6 (weakest) authentication and security:
+# Level 1: Encryption
 
-Encrypted DB with mongoose-encryption plugin.
+Email + password	model.  
+Create Database of Users with MongoDB and Mongoose.  
+Encrypt DB with mongoose-encryption plugin.  
+Use environment variables as credential and encryption key.
