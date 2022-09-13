@@ -1,3 +1,3 @@
-# Level 1 on 6 (weakest) authentication and security:
+# Level 2: Hashing
 
-Encrypted DB with mongoose-encryption plugin.
+Encrypted DB with md5 hashing function
