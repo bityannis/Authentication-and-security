@@ -7,7 +7,6 @@ const mongoDBClient = require("./mongoClient");
 const User = require("./models/user");
 const session = require("express-session");
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
 
 //1st
 app.use(cors());
