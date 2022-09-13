@@ -7,9 +7,8 @@ const mongoDBClient = require("./mongoClient");
 const User = require("./models/user");
 const session = require("express-session");
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
 
-//1st
+//Initialisation
 app.use(cors());
 app.use(
   bodyParser.urlencoded({
@@ -18,7 +17,6 @@ app.use(
 );
 app.set("view engine", "ejs");
 
-//2nd
 app.use(
   session({
     secret: "secret",
@@ -35,11 +33,12 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//3rd
+//HOME
 app.route("/").get(async (req, res) => {
   res.render("home");
 });
 
+//LOGIN
 app
   .route("/login")
   .get((req, res) => {
@@ -60,6 +59,7 @@ app
     });
   });
 
+//REGISTER
 app
   .route("/register")
   .get((req, res) => {
@@ -84,10 +84,12 @@ app
     );
   });
 
+//SECRETS
 app.route("/secrets").get((req, res) => {
   req.isAuthenticated() ? res.render("secrets") : res.redirect("/login");
 });
 
+//LOGOUT
 app.route("/logout").post((req, res, next) => {
   req.logout(function (err) {
     if (err) {
